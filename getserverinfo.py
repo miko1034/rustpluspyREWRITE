@@ -13,7 +13,8 @@ f.close()
 async def getserverinfo(ip,playertoken,steamid):
     socket = RustSocket(ip, "28082", playertoken, steamid)
     socket.connect()
-    serverinfo = socket.getinfo()
+    serverinfo = socket.get_info()
+    socket.disconnect()
     return serverinfo
 
 #additional information in the form of other functions that may be useful
@@ -23,4 +24,4 @@ def getplayercount(serverinfo):
 def getmapsize(serverinfo):
     return serverinfo.size
 
-asyncio.run(getmapsize(getserverinfo(IP,PLAYERTOKEN,STEAMID))) #ERROR HERE HELPPPP
+asyncio.run(getserverinfo(IP,PLAYERTOKEN,STEAMID)) #ERROR HERE HELPPPP
