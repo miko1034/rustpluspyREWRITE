@@ -18,8 +18,8 @@ async def getteaminfo(ip,playertoken, steamid):
     teammembernames = []
     for i in range(len(info.members)):
         teammembernames.append(info.members[i].name)
-    socket.disconnect()
+    await socket.disconnect()
     return teammembernames
+ # OKAY SO CURRENTLY NO WORKIE BECUASE SMALL EROROR >:(((((
 
-getteaminfo(IP, PLAYERTOKEN, STEAMID)
-print(getteaminfo(IP, PLAYERTOKEN, STEAMID))
+print(asyncio.run(getteaminfo(IP, PLAYERTOKEN, STEAMID)))
