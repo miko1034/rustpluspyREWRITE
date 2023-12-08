@@ -21,6 +21,5 @@ async def getteaminfo(ip,playertoken, steamid):
     socket.disconnect()
     return teammembernames
 
-names =  getteaminfo(IP, PLAYERTOKEN, STEAMID)
-
-await print(names)
+getteaminfo(IP, PLAYERTOKEN, STEAMID)
+print(getteaminfo(IP, PLAYERTOKEN, STEAMID))
