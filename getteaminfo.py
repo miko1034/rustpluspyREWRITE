@@ -12,8 +12,8 @@ STEAMID = int(info[2])
 f.close()
 
 async def getteaminfo(ip,playertoken, steamid):
-    socket = RustSocket(ip, "28082", playertoken, steamid)
-    socket.connect()
+    socket = RustSocket(ip, 28082, int(playertoken), int(steamid))
+    await socket.connect()
     info = await socket.get_team_info()
     teammembernames = []
     for i in range(len(info.members)):
